@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_employee_edm_form" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_inline" type="action" string="Documents"
+                        name="%(inspy_edm.action_inspy_edm_doc)d"
+                        context="{'search_default_employee_id': active_id}" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
