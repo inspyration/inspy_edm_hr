@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="semantics_field_employee_doc_keyword" model="semantics.field">
+            <field name="name">Employee Document</field>
+            <field name="active">True</field>
+        </record>
+
+    </data>
+</openerp>

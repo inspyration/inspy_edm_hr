@@ -33,6 +33,7 @@
     'data': [
         'inspy_edm/views/inspy_edm_view.xml',
         'hr/views/hr_view.xml',
+        'semantics/data/semantics_data.xml',
     ],
     'js': [
     ],
