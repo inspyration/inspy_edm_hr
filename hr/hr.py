@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    EDM hr, module for Odoo, Open Source Management Solution
@@ -18,6 +19,26 @@
 #
 ##############################################################################
 
-import inspy_edm
-import hr
+from openerp.osv import fields,osv
 
+class hr(osv.osv):
+    _inherit = 'hr.employee'
+
+    def _edm_docs_count(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        for employee in self.browse(cr, uid, ids, context=context):
+            res[employee.id] = len(employee.document_ids)
+        return res
+
+    _columns = {
+        'document_ids': fields.one2many(
+            'inspy.edm.doc',
+            'employee_id',
+            string="Documents",
+        ),
+        'edm_docs_count': fields.function(
+            _edm_docs_count,
+            string="Documents",
+            type='integer',
+        ),
+    }
