@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    EDM hr, module for Odoo, Open Source Management Solution
